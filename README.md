@@ -1,4 +1,4 @@
-# SamplerAudioApp# SamplerAudioApp
+# SamplerAudioApp
 
 El propósito de la App es importar un audio, extraer un fragmento ya sea de forma manual o automática y exportar ese fragmento.
 

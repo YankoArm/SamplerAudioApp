@@ -77,7 +77,25 @@ def extraer_sampler_manual(y, sr, inicio, fin):
 class SamplerApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Sampler de Canciones")
+        self.root.title("SamplerApp v1.0")
+
+        # Crear menú desplegable clásico
+        menu_bar = tk.Menu(self.root)
+        self.root.config(menu=menu_bar)  # Esto enlaza el menú a la ventana principal
+
+        # Menú de archivo
+        file_menu = tk.Menu(menu_bar, tearoff=0)
+        file_menu.add_command(label="Importar Audio", command=self.cargar_audio)
+        file_menu.add_command(label="Salir", command=self.root.quit)
+        menu_bar.add_cascade(label="Archivo", menu=file_menu)
+        
+        # self.btn_cargar = tk.Button(self.frame, text="Cargar Audio", command=self.cargar_audio)
+        # self.btn_cargar.pack(pady=5)
+
+        # Menú de ayuda
+        help_menu = tk.Menu(menu_bar, tearoff=0)
+        help_menu.add_command(label="Ver Ayuda", command=self.show_help)
+        menu_bar.add_cascade(label="Ayuda", menu=help_menu)
         
         self.archivo_audio = None
         self.y = None
@@ -96,11 +114,6 @@ class SamplerApp:
         self.slider_pitch = tk.Scale(self.frame, from_=-12, to=12, orient="horizontal", label="Pitch Shift (Semitonos)")
         self.slider_pitch.set(0)  # Valor inicial en 0 (sin cambio)
         self.slider_pitch.pack(pady=5)
-
-        
-        # Carga de audio
-        self.btn_cargar = tk.Button(self.frame, text="Cargar Audio", command=self.cargar_audio)
-        self.btn_cargar.pack(pady=5)
         
         # Botón de Play con símbolo Unicode
         self.btn_play = tk.Button(self.frame, text="▶️ Play", command=self.reproducir_audio)
@@ -118,20 +131,9 @@ class SamplerApp:
         self.btn_manual = tk.Button(self.frame, text="Extraer Manualmente", command=self.extraer_manual)
         self.btn_manual.pack(pady=5)
         
-        # Campos de entrada para tiempos de inicio y fin
-        self.label_inicio = tk.Label(self.frame, text="Inicio (s):")
-        self.label_inicio.pack(pady=5)
-        self.entry_inicio = tk.Entry(self.frame)
-        self.entry_inicio.pack(pady=5)
-
-        self.label_fin = tk.Label(self.frame, text="Fin (s):")
-        self.label_fin.pack(pady=5)
-        self.entry_fin = tk.Entry(self.frame)
-        self.entry_fin.pack(pady=5)
+       
         
-        # Cuadro de texto para mostrar mensajes de estado
-        self.texto_estado = tk.Text(self.frame, height=5, width=50, wrap=tk.WORD)
-        self.texto_estado.pack(pady=10)
+      
         
         self.fig, self.ax = plt.subplots(figsize=(10, 4))
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.frame)
@@ -281,6 +283,22 @@ class SamplerApp:
         self.inicio = None
         self.fin = None
         self.dibujar_marcadores()
+
+    def get_text(self, key):
+        if key == "Help":
+            return "Ayuda"
+        return key
+
+    def show_help(self):
+        help_window = tk.Toplevel(self.root)
+        help_window.title(self.get_text("Help"))
+        help_text = """
+        Bienvenido a la ayuda del programa SamplerApp V_1.0.
+        - Selecciona un archivo de audio.
+        - Selecciona una región del audio para extraer el sampler ó extrae automaticamente.
+        - Usa el sampler en tus producciones.
+        """
+        tk.Label(help_window, text=help_text, justify=tk.LEFT).pack(padx=10, pady=10)
 
 if __name__ == "__main__":
     root = tk.Tk()
