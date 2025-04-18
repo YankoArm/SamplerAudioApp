@@ -1,18 +1,44 @@
 # SamplerAudioApp
 
-El propósito de la App es importar un audio, extraer un fragmento ya sea de forma manual o automática y exportar ese fragmento.
+Aplicación desarrollada en Python para importar canciones, seleccionar fragmentos y modificarlos (como cambiar el pitch), permitiendo guardar los samplers para usarlos en beats de rap y otros proyectos musicales. Ideal para productores que trabajan con sampling de audio de forma intuitiva.
 
-## Instalación
+Funcionalidades
+Importar archivos de audio
 
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/YankoArm/SamplerAudioApp.git
+Seleccionar zonas específicas del audio
 
-2. Instala las dependencias
+Cambiar el pitch del fragmento seleccionado
 
-npm install
+Extraer automáticamente un sampler
 
-Uso
-Ejecuta el siguiente comando para iniciar el proyecto:
+Guardar los samplers editados
 
-npm start
+Tecnologías utilizadas
+Python
+
+ttk (interfaz gráfica avanzada)
+
+pydub
+
+otras librerías de procesamiento de audio
+
+Instalación
+bash
+Copiar código
+git clone https://github.com/YankoArm/SamplerAudioApp.git
+pip install -r requirements.txt
+python audio_proyecto4.py
+Estado actual
+En desarrollo. Próximamente se mejorará el diseño visual, se optimizarán las funciones y se añadirán nuevas herramientas para los samplers.
+
+Capturas de pantalla
+(Próximamente)
+
+To-Do
+Mejorar diseño visual de la interfaz
+
+Añadir más efectos de audio
+
+Implementar historial de samplers guardados
+
+Soporte multi-idioma ampliado
