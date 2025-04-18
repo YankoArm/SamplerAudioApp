@@ -1,49 +1,53 @@
-# SamplerAudioApp
+SamplerAudioApp es una herramienta interactiva desarrollada en Python que permite importar canciones, seleccionar fragmentos de audio y modificar su pitch para crear samplers. Ideal para productores musicales y beatmakers que trabajan con sonido de forma creativa e intuitiva.
 
-Aplicación desarrollada en Python para importar canciones, seleccionar fragmentos y modificarlos (como cambiar el pitch), permitiendo guardar los samplers para usarlos en beats de rap y otros proyectos musicales. Ideal para productores que trabajan con sampling de audio de forma intuitiva.
+Características principales
+Importación de archivos de audio
 
-## Funcionalidades
+Selección de zonas del audio mediante una interfaz sencilla
 
-* Importar archivos de audio
+Modificación del pitch del fragmento seleccionado
 
-** Seleccionar zonas específicas del audio
+Opción de extracción automática de samplers
 
-*** Cambiar el pitch del fragmento seleccionado
+Guardado de samplers en archivos de audio
 
-**** Extraer automáticamente un sampler
+Interfaz en español e inglés (según preferencia del usuario)
 
-***** Guardar los samplers editados
-
-### Tecnologías utilizadas
+Tecnologías utilizadas
 Python
 
-- ttk (interfaz gráfica avanzada)
+ttk (interfaz gráfica moderna)
 
-- pydub
+pydub (procesamiento de audio)
 
-...otras librerías de procesamiento de audio
+Tkinter (como base gráfica)
 
-#### Instalación
+Instalación
+Clona el repositorio:
 
-- Copiar código
+Copiar código
 git clone https://github.com/YankoArm/SamplerAudioApp.git
+Instala las dependencias necesarias:
 
+Copiar código
 pip install -r requirements.txt
+Ejecuta la aplicación:
+
+Copiar código
 python audio_proyecto4.py
-
-Estado actual
-
-En desarrollo. Próximamente se mejorará el diseño visual, se optimizarán las funciones y se añadirán nuevas herramientas para los samplers.
-
 Capturas de pantalla
 (Próximamente)
 
-To-Do
+Estado del proyecto
+En desarrollo activo. Se planea mejorar la interfaz visual, optimizar el flujo de trabajo y añadir nuevas funcionalidades como efectos personalizados y gestión avanzada de samplers.
 
-Mejorar diseño visual de la interfaz
+Futuras mejoras
+Rediseño visual con una interfaz más atractiva
 
-Añadir más efectos de audio
+Vista previa en tiempo real de los efectos aplicados
 
-Implementar historial de samplers guardados
+Sistema de historial y etiquetas para los samplers creados
 
-Soporte multi-idioma ampliado
+Posibilidad de exportar configuraciones y plantillas
+
+Mejora en la detección automática de samplers
